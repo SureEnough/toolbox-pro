@@ -21,6 +21,7 @@ const footerLinks = {
     { to: "/#pricing", label: "升级 Pro" },
     { to: "/", label: "返回首页" },
     { to: "/contact", label: "联系我们" },
+    { to: "/about", label: "关于我们" },
     { to: "/privacy", label: "隐私政策" },
     { to: "/terms", label: "服务条款" },
   ],

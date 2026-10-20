@@ -13,6 +13,7 @@ import { usePaywallStore } from "@/store/paywallStore";
 import { useUserStore } from "@/store/userStore";
 import { toast } from "@/components/ui/toast";
 import { EmailCapture } from "@/components/EmailCapture";
+import { StructuredData } from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
 
 const tools = [
@@ -78,6 +79,7 @@ export function LandingPage() {
     <div>
       <SEO title="ToolBox Pro - 免费在线工具箱 | 12+ 实用工具" description="ToolBox Pro 提供 20+ 免费在线工具：密码生成、二维码、JSON格式化、颜色工具、UUID、URL编解码、时间戳、哈希计算等。浏览器直接使用。" keywords="在线工具,密码生成器,二维码,JSON格式化,UUID,URL编码,时间戳,哈希计算,免费工具" />
 
+      <StructuredData />
       {/* Hero */}
       <section className="hero-bg py-20 text-center">
         <div className="container mx-auto px-6">
