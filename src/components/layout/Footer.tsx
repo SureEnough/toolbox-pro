@@ -1,0 +1,58 @@
+import { Link } from "react-router-dom";
+import { Wrench } from "lucide-react";
+
+const footerLinks = {
+  工具: [
+    { to: "/tools/password", label: "密码生成器" },
+    { to: "/tools/qrcode", label: "二维码生成" },
+    { to: "/tools/json", label: "JSON 格式化" },
+    { to: "/tools/color", label: "颜色工具" },
+  ],
+  更多: [
+    { to: "/tools/text", label: "文本工具" },
+    { to: "/tools/calculator", label: "计算器" },
+    { to: "/tools/image", label: "图片工具" },
+    { to: "/tools/pdf", label: "PDF 工具" },
+  ],
+  关于: [
+    { to: "/", label: "返回首页" },
+    { to: "/#pricing", label: "升级 Pro" },
+  ],
+};
+
+export function Footer() {
+  return (
+    <footer className="border-t bg-secondary/50">
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="col-span-2">
+            <Link to="/" className="flex items-center gap-2 text-xl font-extrabold">
+              <Wrench className="h-6 w-6 text-primary" />
+              <span className="gradient-text">ToolBox Pro</span>
+            </Link>
+            <p className="mt-3 text-sm text-muted-foreground">
+              50+ 免费在线工具，浏览器直接使用。隐私安全，数据不上传。
+            </p>
+          </div>
+          {Object.entries(footerLinks).map(([title, links]) => (
+            <div key={title}>
+              <h4 className="mb-3 text-sm font-bold">{title}</h4>
+              {links.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="block py-1 text-sm text-muted-foreground hover:text-primary"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
+          © 2026 ToolBox Pro. All rights reserved. Made with ❤️
+        </div>
+      </div>
+    </footer>
+  );
+}
