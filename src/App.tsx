@@ -33,6 +33,11 @@ const Base64Tool = lazy(() => import("@/pages/tools/Base64Tool").then(m => ({ de
 const JwtDecoder = lazy(() => import("@/pages/tools/JwtDecoder").then(m => ({ default: m.JwtDecoder })));
 const RegexTester = lazy(() => import("@/pages/tools/RegexTester").then(m => ({ default: m.RegexTester })));
 const NumberBaseConverter = lazy(() => import("@/pages/tools/NumberBaseConverter").then(m => ({ default: m.NumberBaseConverter })));
+const MarkdownPreviewer = lazy(() => import("@/pages/tools/MarkdownPreviewer").then(m => ({ default: m.MarkdownPreviewer })));
+const CssMinifier = lazy(() => import("@/pages/tools/CssMinifier").then(m => ({ default: m.CssMinifier })));
+const DiffChecker = lazy(() => import("@/pages/tools/DiffChecker").then(m => ({ default: m.DiffChecker })));
+const CronParser = lazy(() => import("@/pages/tools/CronParser").then(m => ({ default: m.CronParser })));
+const ToolsIndexPage = lazy(() => import("@/pages/ToolsIndexPage").then(m => ({ default: m.ToolsIndexPage })));
 
 function Loading() {
   return (
@@ -91,6 +96,11 @@ export default function App() {
               <Route path="/tools/jwt" element={<JwtDecoder />} />
               <Route path="/tools/regex" element={<RegexTester />} />
               <Route path="/tools/number-base" element={<NumberBaseConverter />} />
+              <Route path="/tools/markdown" element={<MarkdownPreviewer />} />
+              <Route path="/tools/css-minifier" element={<CssMinifier />} />
+              <Route path="/tools/diff" element={<DiffChecker />} />
+              <Route path="/tools/cron" element={<CronParser />} />
+              <Route path="/tools" element={<ToolsIndexPage />} />
             </Routes>
           </Suspense>
         </Layout>

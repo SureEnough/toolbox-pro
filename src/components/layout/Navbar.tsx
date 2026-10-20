@@ -16,6 +16,7 @@ const navItems = [
   { to: "/tools/base64", label: "Base64" },
   { to: "/tools/jwt", label: "JWT" },
   { to: "/tools/regex", label: "正则" },
+  { to: "/tools", label: "全部" },
   { to: "/tools/calculator", label: "计算器" },
   { to: "/tools/image", label: "图片" },
 ];

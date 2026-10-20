@@ -30,6 +30,10 @@ const tools = [
   { icon: KeyRound, title: "JWT 解码器", desc: "解码 JWT Token，查看 Payload", badge: "free" as const, to: "/tools/jwt" },
   { icon: Type, title: "正则表达式测试", desc: "实时测试正则匹配结果", badge: "free" as const, to: "/tools/regex" },
   { icon: CalcIcon, title: "进制转换", desc: "BIN/OCT/DEC/HEX 互转", badge: "free" as const, to: "/tools/number-base" },
+  { icon: FileCode, title: "Markdown 预览", desc: "实时编辑预览 Markdown", badge: "free" as const, to: "/tools/markdown" },
+  { icon: Palette, title: "CSS 压缩美化", desc: "CSS minify / beautify", badge: "free" as const, to: "/tools/css-minifier" },
+  { icon: Type, title: "文本差异对比", desc: "逐行比较两段文本差异", badge: "free" as const, to: "/tools/diff" },
+  { icon: CalcIcon, title: "Cron 解析", desc: "Cron 表达式解析和下次运行", badge: "free" as const, to: "/tools/cron" },
   { icon: ImageIcon, title: "图片工具", desc: "压缩、格式转换、裁剪、水印", badge: "pro" as const, to: "/tools/image" },
   { icon: FileText, title: "PDF 工具", desc: "PDF 合并、拆分、压缩、转图片", badge: "pro" as const, to: "/tools/pdf" },
 ];
@@ -55,7 +59,7 @@ const faqs = [
 ];
 
 const pricingPlans = [
-  { name: "免费版", price: "$0", period: "/永久", features: ["16 个基础工具", "每个工具每天 5 次", "基础功能", "社区支持"], featured: false, cta: "当前方案" },
+  { name: "免费版", price: "$0", period: "/永久", features: ["20 个基础工具", "每个工具每天 5 次", "基础功能", "社区支持"], featured: false, cta: "当前方案" },
   { name: "Pro 月度", price: "$9.9", period: "/月", features: ["全部 50+ 工具", "无限次使用", "高级功能解锁", "无广告体验", "优先邮件支持"], featured: true, cta: "立即升级" },
   { name: "Pro 年度", price: "$79", period: "/年", features: ["全部 50+ 工具", "无限次使用", "高级功能解锁", "无广告体验", "省 33%（$6.6/月）"], featured: false, cta: "超值之选" },
 ];
@@ -72,7 +76,7 @@ export function LandingPage() {
 
   return (
     <div>
-      <SEO title="ToolBox Pro - 免费在线工具箱 | 12+ 实用工具" description="ToolBox Pro 提供 16+ 免费在线工具：密码生成、二维码、JSON格式化、颜色工具、UUID、URL编解码、时间戳、哈希计算等。浏览器直接使用。" keywords="在线工具,密码生成器,二维码,JSON格式化,UUID,URL编码,时间戳,哈希计算,免费工具" />
+      <SEO title="ToolBox Pro - 免费在线工具箱 | 12+ 实用工具" description="ToolBox Pro 提供 20+ 免费在线工具：密码生成、二维码、JSON格式化、颜色工具、UUID、URL编解码、时间戳、哈希计算等。浏览器直接使用。" keywords="在线工具,密码生成器,二维码,JSON格式化,UUID,URL编码,时间戳,哈希计算,免费工具" />
 
       {/* Hero */}
       <section className="hero-bg py-20 text-center">
