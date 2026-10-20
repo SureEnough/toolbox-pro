@@ -8,6 +8,8 @@ import { Paywall } from "@/components/layout/Paywall";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { ToastContainer } from "@/components/ui/toast";
 import { LandingPage } from "@/pages/LandingPage";
+import { PaymentSuccess } from "@/pages/PaymentSuccess";
+import { PaymentCancel } from "@/pages/PaymentCancel";
 import { PasswordGenerator } from "@/pages/tools/PasswordGenerator";
 import { QRCodeGenerator } from "@/pages/tools/QRCodeGenerator";
 import { JsonFormatter } from "@/pages/tools/JsonFormatter";
@@ -35,7 +37,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const { theme, set } = useThemeStore();
+  const { theme } = useThemeStore();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -47,6 +49,8 @@ export default function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/payment/success" element={<PaymentSuccess />} />
+            <Route path="/payment/cancel" element={<PaymentCancel />} />
             <Route path="/tools/password" element={<PasswordGenerator />} />
             <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
             <Route path="/tools/json" element={<JsonFormatter />} />
