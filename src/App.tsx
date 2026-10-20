@@ -11,6 +11,8 @@ import { LandingPage } from "@/pages/LandingPage";
 import { PaymentSuccess } from "@/pages/PaymentSuccess";
 import { PaymentCancel } from "@/pages/PaymentCancel";
 import { SettingsPage } from "@/pages/SettingsPage";
+import { BlogPage } from "@/pages/BlogPage";
+import { BlogPostPage } from "@/pages/BlogPostPage";
 import { PasswordGenerator } from "@/pages/tools/PasswordGenerator";
 import { QRCodeGenerator } from "@/pages/tools/QRCodeGenerator";
 import { JsonFormatter } from "@/pages/tools/JsonFormatter";
@@ -56,6 +58,8 @@ export default function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/payment/success" element={<PaymentSuccess />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/payment/cancel" element={<PaymentCancel />} />
             <Route path="/tools/password" element={<PasswordGenerator />} />
             <Route path="/tools/qrcode" element={<QRCodeGenerator />} />

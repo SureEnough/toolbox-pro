@@ -6,17 +6,19 @@ const footerLinks = {
     { to: "/tools/password", label: "密码生成器" },
     { to: "/tools/qrcode", label: "二维码生成" },
     { to: "/tools/json", label: "JSON 格式化" },
-    { to: "/tools/color", label: "颜色工具" },
+    { to: "/tools/uuid", label: "UUID 生成" },
   ],
-  更多: [
-    { to: "/tools/text", label: "文本工具" },
-    { to: "/tools/calculator", label: "计算器" },
-    { to: "/tools/image", label: "图片工具" },
-    { to: "/tools/pdf", label: "PDF 工具" },
+  更多工具: [
+    { to: "/tools/base64", label: "Base64 编解码" },
+    { to: "/tools/jwt", label: "JWT 解码器" },
+    { to: "/tools/regex", label: "正则测试" },
+    { to: "/tools/hash", label: "哈希计算" },
   ],
-  关于: [
-    { to: "/", label: "返回首页" },
+  资源: [
+    { to: "/blog", label: "技术博客" },
+    { to: "/settings", label: "账户设置" },
     { to: "/#pricing", label: "升级 Pro" },
+    { to: "/", label: "返回首页" },
   ],
 };
 
@@ -31,7 +33,7 @@ export function Footer() {
               <span className="gradient-text">ToolBox Pro</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              50+ 免费在线工具，浏览器直接使用。隐私安全，数据不上传。
+              16+ 免费在线工具，浏览器直接使用。隐私安全，数据不上传。
             </p>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (

@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://toolbox.pro/sitemap.xml
+Disallow: /api/
+Disallow: /payment/
+
+Sitemap: https://toolbox-pro-4lq.pages.dev/sitemap.xml
