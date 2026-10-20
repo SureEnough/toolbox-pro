@@ -34,7 +34,6 @@ export async function onRequestPost({ request, env }) {
     params.append("cancel_url", `${origin}/payment/cancel`);
     params.append("allow_promotion_codes", "true");
     params.append("billing_address_collection", "auto");
-    params.append("customer_creation", "always");
 
     const resp = await fetch(`${STRIPE_API}/checkout/sessions`, {
       method: "POST",
