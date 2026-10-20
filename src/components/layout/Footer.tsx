@@ -57,6 +57,12 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
+        <div className="mt-4 flex justify-center gap-3">
+          <a href="https://www.buymeacoffee.com/toolboxpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">☕ 请喝咖啡</a>
+          <span className="text-muted-foreground">·</span>
+          <a href="https://github.com/sponsors/SureEnough" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">❤️ Sponsor</a>
+        </div>
+
           © 2026 ToolBox Pro. All rights reserved. Made with ❤️
         </div>
       </div>

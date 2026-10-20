@@ -13,6 +13,7 @@ import { usePaywallStore } from "@/store/paywallStore";
 import { useUserStore } from "@/store/userStore";
 import { toast } from "@/components/ui/toast";
 import { EmailCapture } from "@/components/EmailCapture";
+import { SupportButtons } from "@/components/SupportButtons";
 import { StructuredData } from "@/components/StructuredData";
 import { cn } from "@/lib/utils";
 
@@ -217,6 +218,13 @@ export function LandingPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Support */}
+      <section className="py-8">
+        <div className="container mx-auto max-w-2xl px-6">
+          <SupportButtons variant="banner" />
         </div>
       </section>
 
