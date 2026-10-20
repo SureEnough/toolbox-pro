@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { AdSlot } from "@/components/layout/AdSlot";
 import { Calendar, ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -130,6 +131,8 @@ export function BlogPage() {
 
         <div className="mt-12 flex items-center justify-between rounded-xl bg-secondary p-6">
           <div>
+        <AdSlot className="mt-8" />
+
             <h3 className="font-bold">觉得有用？分享给朋友！</h3>
             <p className="text-sm text-muted-foreground">支持我们继续开发更多免费工具</p>
           </div>

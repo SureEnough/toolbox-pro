@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { AdSlot } from "@/components/layout/AdSlot";
 import { Wrench, Users, Target, Heart, Github, Mail } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -44,6 +45,8 @@ export function AboutPage() {
             </Card>
           ))}
         </div>
+
+        <AdSlot className="mb-8" />
 
         <h2 className="mb-6 text-2xl font-bold">技术栈</h2>
         <div className="mb-12 flex flex-wrap gap-3">
