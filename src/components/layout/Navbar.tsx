@@ -1,29 +1,31 @@
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Crown, Wrench } from "lucide-react";
+import { Moon, Sun, Crown, Wrench, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useThemeStore } from "@/store/themeStore";
 import { usePaywallStore } from "@/store/paywallStore";
+import { useI18n, t } from "@/store/i18nStore";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { to: "/tools/password", label: "密码" },
-  { to: "/tools/qrcode", label: "二维码" },
-  { to: "/tools/json", label: "JSON" },
-  { to: "/tools/color", label: "颜色" },
-  { to: "/tools/uuid", label: "UUID" },
-  { to: "/tools/timestamp", label: "时间戳" },
-  { to: "/tools/hash", label: "哈希" },
-  { to: "/tools/base64", label: "Base64" },
-  { to: "/tools/jwt", label: "JWT" },
-  { to: "/tools/regex", label: "正则" },
-  { to: "/tools", label: "全部" },
-  { to: "/tools/calculator", label: "计算器" },
-  { to: "/tools/image", label: "图片" },
+  { to: "/tools/password", key: "tool.password" },
+  { to: "/tools/qrcode", key: "tool.qrcode" },
+  { to: "/tools/json", key: "tool.json" },
+  { to: "/tools/color", key: "tool.color" },
+  { to: "/tools/uuid", key: "tool.uuid" },
+  { to: "/tools/timestamp", key: "tool.timestamp" },
+  { to: "/tools/hash", key: "tool.hash" },
+  { to: "/tools/base64", key: "tool.base64" },
+  { to: "/tools/jwt", key: "tool.jwt" },
+  { to: "/tools/regex", key: "tool.regex" },
+  { to: "/tools", key: "nav.all" },
+  { to: "/tools/calculator", key: "tool.calculator" },
+  { to: "/tools/image", key: "tool.image" },
 ];
 
 export function Navbar() {
   const { theme, toggle } = useThemeStore();
   const { show } = usePaywallStore();
+  const { locale, toggle: toggleLocale } = useI18n();
   const location = useLocation();
 
   return (
@@ -46,12 +48,16 @@ export function Navbar() {
                   : "text-muted-foreground hover:bg-secondary hover:text-primary"
               )}
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
+          <Button variant="ghost" size="icon" onClick={toggleLocale} title="Switch language">
+            <Languages className="h-5 w-5" />
+            <span className="ml-1 text-xs font-bold">{locale === "zh" ? "EN" : "中"}</span>
+          </Button>
           <Button variant="ghost" size="icon" onClick={toggle}>
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>

@@ -1,33 +1,34 @@
 import { Link } from "react-router-dom";
 import { Wrench } from "lucide-react";
-
-const footerLinks = {
-  工具: [
-    { to: "/tools/password", label: "密码生成器" },
-    { to: "/tools/qrcode", label: "二维码生成" },
-    { to: "/tools/json", label: "JSON 格式化" },
-    { to: "/tools/uuid", label: "UUID 生成" },
-  ],
-  更多工具: [
-    { to: "/tools/base64", label: "Base64 编解码" },
-    { to: "/tools/jwt", label: "JWT 解码器" },
-    { to: "/tools/regex", label: "正则测试" },
-    { to: "/tools/hash", label: "哈希计算" },
-  ],
-  资源: [
-    { to: "/blog", label: "技术博客" },
-    { to: "/recommend", label: "推荐工具" },
-    { to: "/settings", label: "账户设置" },
-    { to: "/#pricing", label: "升级 Pro" },
-    { to: "/", label: "返回首页" },
-    { to: "/contact", label: "联系我们" },
-    { to: "/about", label: "关于我们" },
-    { to: "/privacy", label: "隐私政策" },
-    { to: "/terms", label: "服务条款" },
-  ],
-};
+import { t } from "@/store/i18nStore";
 
 export function Footer() {
+  const footerLinks = {
+    [t("footer.tools")]: [
+      { to: "/tools/password", label: t("footer.passwordGen") },
+      { to: "/tools/qrcode", label: t("footer.qrcodeGen") },
+      { to: "/tools/json", label: t("footer.jsonFormat") },
+      { to: "/tools/uuid", label: t("footer.uuidGen") },
+    ],
+    [t("footer.moreTools")]: [
+      { to: "/tools/base64", label: t("footer.base64Codec") },
+      { to: "/tools/jwt", label: t("footer.jwtDecoder") },
+      { to: "/tools/regex", label: t("footer.regexTest") },
+      { to: "/tools/hash", label: t("footer.hashCalc") },
+    ],
+    [t("footer.resources")]: [
+      { to: "/blog", label: t("footer.blog") },
+      { to: "/recommend", label: t("footer.recommend") },
+      { to: "/settings", label: t("footer.settings") },
+      { to: "/#pricing", label: t("footer.upgrade") },
+      { to: "/", label: t("footer.home") },
+      { to: "/contact", label: t("footer.contact") },
+      { to: "/about", label: t("footer.about") },
+      { to: "/privacy", label: t("footer.privacy") },
+      { to: "/terms", label: t("footer.terms") },
+    ],
+  };
+
   return (
     <footer className="border-t bg-secondary/50">
       <div className="container mx-auto px-6 py-12">
@@ -38,7 +39,7 @@ export function Footer() {
               <span className="gradient-text">ToolBox Pro</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              16+ 免费在线工具，浏览器直接使用。隐私安全，数据不上传。
+              {t("footer.desc")}
             </p>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
@@ -57,13 +58,12 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-        <div className="mt-4 flex justify-center gap-3">
-          <a href="https://www.buymeacoffee.com/toolboxpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">☕ 请喝咖啡</a>
-          <span className="text-muted-foreground">·</span>
-          <a href="https://github.com/sponsors/SureEnough" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">❤️ Sponsor</a>
-        </div>
-
-          © 2026 ToolBox Pro. All rights reserved. Made with ❤️
+          <div className="mt-4 flex justify-center gap-3">
+            <a href="https://www.buymeacoffee.com/toolboxpro" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">{t("footer.sponsor")}</a>
+            <span className="text-muted-foreground">·</span>
+            <a href="https://github.com/sponsors/SureEnough" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary">{t("footer.sponsor2")}</a>
+          </div>
+          {t("footer.rights")}
         </div>
       </div>
     </footer>
