@@ -16,6 +16,7 @@ const footerLinks = {
   ],
   资源: [
     { to: "/blog", label: "技术博客" },
+    { to: "/recommend", label: "推荐工具" },
     { to: "/settings", label: "账户设置" },
     { to: "/#pricing", label: "升级 Pro" },
     { to: "/", label: "返回首页" },

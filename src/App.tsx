@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { useThemeStore } from "@/store/themeStore";
@@ -8,27 +8,39 @@ import { Paywall } from "@/components/layout/Paywall";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { ToastContainer } from "@/components/ui/toast";
 import { LandingPage } from "@/pages/LandingPage";
-import { PaymentSuccess } from "@/pages/PaymentSuccess";
-import { PaymentCancel } from "@/pages/PaymentCancel";
-import { SettingsPage } from "@/pages/SettingsPage";
-import { BlogPage } from "@/pages/BlogPage";
-import { BlogPostPage } from "@/pages/BlogPostPage";
-import { PasswordGenerator } from "@/pages/tools/PasswordGenerator";
-import { QRCodeGenerator } from "@/pages/tools/QRCodeGenerator";
-import { JsonFormatter } from "@/pages/tools/JsonFormatter";
-import { ColorTool } from "@/pages/tools/ColorTool";
-import { TextTool } from "@/pages/tools/TextTool";
-import { Calculator } from "@/pages/tools/Calculator";
-import { ImageTool } from "@/pages/tools/ImageTool";
-import { PdfTool } from "@/pages/tools/PdfTool";
-import { UUIDGenerator } from "@/pages/tools/UUIDGenerator";
-import { UrlEncoder } from "@/pages/tools/UrlEncoder";
-import { TimestampConverter } from "@/pages/tools/TimestampConverter";
-import { HashTool } from "@/pages/tools/HashTool";
-import { Base64Tool } from "@/pages/tools/Base64Tool";
-import { JwtDecoder } from "@/pages/tools/JwtDecoder";
-import { RegexTester } from "@/pages/tools/RegexTester";
-import { NumberBaseConverter } from "@/pages/tools/NumberBaseConverter";
+
+// Lazy load all secondary pages for code splitting
+const SettingsPage = lazy(() => import("@/pages/SettingsPage").then(m => ({ default: m.SettingsPage })));
+const BlogPage = lazy(() => import("@/pages/BlogPage").then(m => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() => import("@/pages/BlogPostPage").then(m => ({ default: m.BlogPostPage })));
+const PaymentSuccess = lazy(() => import("@/pages/PaymentSuccess").then(m => ({ default: m.PaymentSuccess })));
+const PaymentCancel = lazy(() => import("@/pages/PaymentCancel").then(m => ({ default: m.PaymentCancel })));
+const AffiliatePage = lazy(() => import("@/pages/AffiliatePage").then(m => ({ default: m.AffiliatePage })));
+
+const PasswordGenerator = lazy(() => import("@/pages/tools/PasswordGenerator").then(m => ({ default: m.PasswordGenerator })));
+const QRCodeGenerator = lazy(() => import("@/pages/tools/QRCodeGenerator").then(m => ({ default: m.QRCodeGenerator })));
+const JsonFormatter = lazy(() => import("@/pages/tools/JsonFormatter").then(m => ({ default: m.JsonFormatter })));
+const ColorTool = lazy(() => import("@/pages/tools/ColorTool").then(m => ({ default: m.ColorTool })));
+const TextTool = lazy(() => import("@/pages/tools/TextTool").then(m => ({ default: m.TextTool })));
+const Calculator = lazy(() => import("@/pages/tools/Calculator").then(m => ({ default: m.Calculator })));
+const ImageTool = lazy(() => import("@/pages/tools/ImageTool").then(m => ({ default: m.ImageTool })));
+const PdfTool = lazy(() => import("@/pages/tools/PdfTool").then(m => ({ default: m.PdfTool })));
+const UUIDGenerator = lazy(() => import("@/pages/tools/UUIDGenerator").then(m => ({ default: m.UUIDGenerator })));
+const UrlEncoder = lazy(() => import("@/pages/tools/UrlEncoder").then(m => ({ default: m.UrlEncoder })));
+const TimestampConverter = lazy(() => import("@/pages/tools/TimestampConverter").then(m => ({ default: m.TimestampConverter })));
+const HashTool = lazy(() => import("@/pages/tools/HashTool").then(m => ({ default: m.HashTool })));
+const Base64Tool = lazy(() => import("@/pages/tools/Base64Tool").then(m => ({ default: m.Base64Tool })));
+const JwtDecoder = lazy(() => import("@/pages/tools/JwtDecoder").then(m => ({ default: m.JwtDecoder })));
+const RegexTester = lazy(() => import("@/pages/tools/RegexTester").then(m => ({ default: m.RegexTester })));
+const NumberBaseConverter = lazy(() => import("@/pages/tools/NumberBaseConverter").then(m => ({ default: m.NumberBaseConverter })));
+
+function Loading() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+    </div>
+  );
+}
 
 function Layout({ children }: { children: React.ReactNode }) {
   useAnalytics();
@@ -54,30 +66,33 @@ export default function App() {
     <HelmetProvider>
       <BrowserRouter>
         <Layout>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/payment/success" element={<PaymentSuccess />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-            <Route path="/payment/cancel" element={<PaymentCancel />} />
-            <Route path="/tools/password" element={<PasswordGenerator />} />
-            <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
-            <Route path="/tools/json" element={<JsonFormatter />} />
-            <Route path="/tools/color" element={<ColorTool />} />
-            <Route path="/tools/text" element={<TextTool />} />
-            <Route path="/tools/calculator" element={<Calculator />} />
-            <Route path="/tools/image" element={<ImageTool />} />
-            <Route path="/tools/pdf" element={<PdfTool />} />
-            <Route path="/tools/uuid" element={<UUIDGenerator />} />
-            <Route path="/tools/url-encoder" element={<UrlEncoder />} />
-            <Route path="/tools/timestamp" element={<TimestampConverter />} />
-            <Route path="/tools/hash" element={<HashTool />} />
-            <Route path="/tools/base64" element={<Base64Tool />} />
-            <Route path="/tools/jwt" element={<JwtDecoder />} />
-            <Route path="/tools/regex" element={<RegexTester />} />
-            <Route path="/tools/number-base" element={<NumberBaseConverter />} />
-          </Routes>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/settings" element={<SettingsPage />} />
+              <Route path="/recommend" element={<AffiliatePage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/payment/success" element={<PaymentSuccess />} />
+              <Route path="/payment/cancel" element={<PaymentCancel />} />
+              <Route path="/tools/password" element={<PasswordGenerator />} />
+              <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
+              <Route path="/tools/json" element={<JsonFormatter />} />
+              <Route path="/tools/color" element={<ColorTool />} />
+              <Route path="/tools/text" element={<TextTool />} />
+              <Route path="/tools/calculator" element={<Calculator />} />
+              <Route path="/tools/image" element={<ImageTool />} />
+              <Route path="/tools/pdf" element={<PdfTool />} />
+              <Route path="/tools/uuid" element={<UUIDGenerator />} />
+              <Route path="/tools/url-encoder" element={<UrlEncoder />} />
+              <Route path="/tools/timestamp" element={<TimestampConverter />} />
+              <Route path="/tools/hash" element={<HashTool />} />
+              <Route path="/tools/base64" element={<Base64Tool />} />
+              <Route path="/tools/jwt" element={<JwtDecoder />} />
+              <Route path="/tools/regex" element={<RegexTester />} />
+              <Route path="/tools/number-base" element={<NumberBaseConverter />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </HelmetProvider>

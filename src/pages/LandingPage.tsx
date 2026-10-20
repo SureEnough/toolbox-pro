@@ -12,6 +12,7 @@ import { SEO } from "@/components/SEO";
 import { usePaywallStore } from "@/store/paywallStore";
 import { useUserStore } from "@/store/userStore";
 import { toast } from "@/components/ui/toast";
+import { EmailCapture } from "@/components/EmailCapture";
 import { cn } from "@/lib/utils";
 
 const tools = [
@@ -210,6 +211,13 @@ export function LandingPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section className="py-8">
+        <div className="container mx-auto max-w-2xl px-6">
+          <EmailCapture />
         </div>
       </section>
 
