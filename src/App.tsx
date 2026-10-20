@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Paywall } from "@/components/layout/Paywall";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { ToastContainer } from "@/components/ui/toast";
+import { CookieConsent } from "@/components/CookieConsent";
 import { LandingPage } from "@/pages/LandingPage";
 
 // Lazy load all secondary pages for code splitting
@@ -38,6 +39,9 @@ const CssMinifier = lazy(() => import("@/pages/tools/CssMinifier").then(m => ({ 
 const DiffChecker = lazy(() => import("@/pages/tools/DiffChecker").then(m => ({ default: m.DiffChecker })));
 const CronParser = lazy(() => import("@/pages/tools/CronParser").then(m => ({ default: m.CronParser })));
 const ToolsIndexPage = lazy(() => import("@/pages/ToolsIndexPage").then(m => ({ default: m.ToolsIndexPage })));
+const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
+const TermsOfService = lazy(() => import("@/pages/TermsOfService").then(m => ({ default: m.TermsOfService })));
+const ContactPage = lazy(() => import("@/pages/ContactPage").then(m => ({ default: m.ContactPage })));
 
 function Loading() {
   return (
@@ -56,6 +60,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <Footer />
       <Paywall />
       <ToastContainer />
+      <CookieConsent />
     </div>
   );
 }
@@ -76,6 +81,9 @@ export default function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/settings" element={<SettingsPage />} />
               <Route path="/recommend" element={<AffiliatePage />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/payment/success" element={<PaymentSuccess />} />
