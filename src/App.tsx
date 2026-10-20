@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Paywall } from "@/components/layout/Paywall";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 import { ToastContainer } from "@/components/ui/toast";
 import { CookieConsent } from "@/components/CookieConsent";
 import { LandingPage } from "@/pages/LandingPage";
@@ -54,6 +55,7 @@ function Loading() {
 
 function Layout({ children }: { children: React.ReactNode }) {
   useAnalytics();
+useKeyboardShortcuts();
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
