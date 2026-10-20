@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import {
   KeyRound, QrCode, Braces, Palette, Type, Calculator as CalcIcon,
   Image as ImageIcon, FileText, Zap, Shield, Smartphone, Gift,
-  Check, Crown, Rocket, Cloud, NotebookPen, Hash, Globe, Clock, Fingerprint,
+  Check, Crown, Rocket, Cloud, NotebookPen, Hash, Globe, Clock, Fingerprint, FileCode,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -25,6 +25,10 @@ const tools = [
   { icon: Globe, title: "URL 编解码", desc: "URL 编码解码、URI 组件处理", badge: "free" as const, to: "/tools/url-encoder" },
   { icon: Clock, title: "时间戳转换", desc: "Unix 时间戳与日期时间互转", badge: "free" as const, to: "/tools/timestamp" },
   { icon: Hash, title: "哈希计算", desc: "SHA-1/256/384/512 哈希计算", badge: "free" as const, to: "/tools/hash" },
+  { icon: FileCode, title: "Base64 编解码", desc: "Base64 编码解码，支持中文", badge: "free" as const, to: "/tools/base64" },
+  { icon: KeyRound, title: "JWT 解码器", desc: "解码 JWT Token，查看 Payload", badge: "free" as const, to: "/tools/jwt" },
+  { icon: Type, title: "正则表达式测试", desc: "实时测试正则匹配结果", badge: "free" as const, to: "/tools/regex" },
+  { icon: CalcIcon, title: "进制转换", desc: "BIN/OCT/DEC/HEX 互转", badge: "free" as const, to: "/tools/number-base" },
   { icon: ImageIcon, title: "图片工具", desc: "压缩、格式转换、裁剪、水印", badge: "pro" as const, to: "/tools/image" },
   { icon: FileText, title: "PDF 工具", desc: "PDF 合并、拆分、压缩、转图片", badge: "pro" as const, to: "/tools/pdf" },
 ];
@@ -50,7 +54,7 @@ const faqs = [
 ];
 
 const pricingPlans = [
-  { name: "免费版", price: "$0", period: "/永久", features: ["12 个基础工具", "每个工具每天 5 次", "基础功能", "社区支持"], featured: false, cta: "当前方案" },
+  { name: "免费版", price: "$0", period: "/永久", features: ["16 个基础工具", "每个工具每天 5 次", "基础功能", "社区支持"], featured: false, cta: "当前方案" },
   { name: "Pro 月度", price: "$9.9", period: "/月", features: ["全部 50+ 工具", "无限次使用", "高级功能解锁", "无广告体验", "优先邮件支持"], featured: true, cta: "立即升级" },
   { name: "Pro 年度", price: "$79", period: "/年", features: ["全部 50+ 工具", "无限次使用", "高级功能解锁", "无广告体验", "省 33%（$6.6/月）"], featured: false, cta: "超值之选" },
 ];
@@ -67,7 +71,7 @@ export function LandingPage() {
 
   return (
     <div>
-      <SEO title="ToolBox Pro - 免费在线工具箱 | 12+ 实用工具" description="ToolBox Pro 提供 12+ 免费在线工具：密码生成、二维码、JSON格式化、颜色工具、UUID、URL编解码、时间戳、哈希计算等。浏览器直接使用。" keywords="在线工具,密码生成器,二维码,JSON格式化,UUID,URL编码,时间戳,哈希计算,免费工具" />
+      <SEO title="ToolBox Pro - 免费在线工具箱 | 12+ 实用工具" description="ToolBox Pro 提供 16+ 免费在线工具：密码生成、二维码、JSON格式化、颜色工具、UUID、URL编解码、时间戳、哈希计算等。浏览器直接使用。" keywords="在线工具,密码生成器,二维码,JSON格式化,UUID,URL编码,时间戳,哈希计算,免费工具" />
 
       {/* Hero */}
       <section className="hero-bg py-20 text-center">

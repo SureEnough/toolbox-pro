@@ -13,6 +13,9 @@ const navItems = [
   { to: "/tools/uuid", label: "UUID" },
   { to: "/tools/timestamp", label: "时间戳" },
   { to: "/tools/hash", label: "哈希" },
+  { to: "/tools/base64", label: "Base64" },
+  { to: "/tools/jwt", label: "JWT" },
+  { to: "/tools/regex", label: "正则" },
   { to: "/tools/calculator", label: "计算器" },
   { to: "/tools/image", label: "图片" },
 ];

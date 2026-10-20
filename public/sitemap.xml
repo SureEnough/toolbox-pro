@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://toolbox.pro/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://toolbox.pro/tools/password</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/qrcode</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/json</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/color</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/text</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/calculator</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/uuid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/url-encoder</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/timestamp</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/hash</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://toolbox.pro/tools/image</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://toolbox.pro/tools/pdf</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/settings</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/password</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/qrcode</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/json</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/color</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/text</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/calculator</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/uuid</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/url-encoder</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/timestamp</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/hash</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/base64</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/jwt</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/regex</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/number-base</loc><priority>0.8</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/image</loc><priority>0.7</priority></url>
+  <url><loc>https://toolbox-pro-4lq.pages.dev/tools/pdf</loc><priority>0.7</priority></url>
 </urlset>

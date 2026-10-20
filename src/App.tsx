@@ -10,6 +10,7 @@ import { ToastContainer } from "@/components/ui/toast";
 import { LandingPage } from "@/pages/LandingPage";
 import { PaymentSuccess } from "@/pages/PaymentSuccess";
 import { PaymentCancel } from "@/pages/PaymentCancel";
+import { SettingsPage } from "@/pages/SettingsPage";
 import { PasswordGenerator } from "@/pages/tools/PasswordGenerator";
 import { QRCodeGenerator } from "@/pages/tools/QRCodeGenerator";
 import { JsonFormatter } from "@/pages/tools/JsonFormatter";
@@ -22,6 +23,10 @@ import { UUIDGenerator } from "@/pages/tools/UUIDGenerator";
 import { UrlEncoder } from "@/pages/tools/UrlEncoder";
 import { TimestampConverter } from "@/pages/tools/TimestampConverter";
 import { HashTool } from "@/pages/tools/HashTool";
+import { Base64Tool } from "@/pages/tools/Base64Tool";
+import { JwtDecoder } from "@/pages/tools/JwtDecoder";
+import { RegexTester } from "@/pages/tools/RegexTester";
+import { NumberBaseConverter } from "@/pages/tools/NumberBaseConverter";
 
 function Layout({ children }: { children: React.ReactNode }) {
   useAnalytics();
@@ -50,6 +55,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/payment/success" element={<PaymentSuccess />} />
+            <Route path="/settings" element={<SettingsPage />} />
             <Route path="/payment/cancel" element={<PaymentCancel />} />
             <Route path="/tools/password" element={<PasswordGenerator />} />
             <Route path="/tools/qrcode" element={<QRCodeGenerator />} />
@@ -63,6 +69,10 @@ export default function App() {
             <Route path="/tools/url-encoder" element={<UrlEncoder />} />
             <Route path="/tools/timestamp" element={<TimestampConverter />} />
             <Route path="/tools/hash" element={<HashTool />} />
+            <Route path="/tools/base64" element={<Base64Tool />} />
+            <Route path="/tools/jwt" element={<JwtDecoder />} />
+            <Route path="/tools/regex" element={<RegexTester />} />
+            <Route path="/tools/number-base" element={<NumberBaseConverter />} />
           </Routes>
         </Layout>
       </BrowserRouter>
